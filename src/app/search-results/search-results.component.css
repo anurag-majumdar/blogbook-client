@@ -1,0 +1,53 @@
+.text-input-jumbo {
+ letter-spacing:0;
+ font-weight:300 !important;
+ font-size:50px !important;
+ height:80px !important;
+ padding:0;
+ width:100%;
+}
+
+a{
+    color: inherit;
+    cursor: pointer;
+}
+
+img.circle{
+    position: relative;
+    left: 36px;
+}
+
+p#user-name{
+    position: relative;
+    top: -6px;
+    left: 45px;
+    font-size: 14px;
+}
+
+div.card-content{
+    padding-left: 20px !important;
+}
+
+div.valign-wrapper{
+    position: relative;
+    top: 10px;
+}
+
+p#comment-author{
+    position: relative;
+    top: 8px;
+    left: 45px;
+    font-size: 14px;
+}
+
+p#comment-date{
+    position: relative;
+    top: -7px;
+    left: 45px;
+    font-size: 12px;
+}
+
+.post-title{
+    position: relative;
+    left: 28px;
+}

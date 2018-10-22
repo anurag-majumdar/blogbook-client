@@ -1,0 +1,69 @@
+#body-description{
+    font-size: 1.1em;
+}
+
+.chip{
+    margin-right: 8px;
+}
+
+a.inherit{
+    cursor: pointer;
+    color: inherit;
+}
+
+#comment{
+    position: relative;
+    left: 15px;
+}
+
+#comment-title{
+    position: relative;
+    top: -5px;
+}
+
+i.icon-blue {
+    color: #2196f3;
+}
+
+span#like-count{
+    position: relative;
+    left: 5px;
+    top: -6px;
+}
+
+span#comment-count{
+    position: relative;
+    left: 0px;
+    top: -7px;
+}
+
+p#comment-author{
+    position: relative;
+    top: 8px;
+    left: 8px;
+    font-size: 14px;
+}
+
+p#comment-body{
+    font-size: 18px;
+}
+
+p#comment-date{
+    position: relative;
+    top: -5px;
+    left: 8px;
+    font-size: 12px;
+}
+
+p#post-author{
+    position: relative;
+    top: -2px;
+    left: 10px;
+    font-size: 15px;
+}
+
+p#post-date{
+    position: relative;
+    left: 10px;
+    font-size: 13px;
+}

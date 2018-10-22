@@ -1,0 +1,8 @@
+img[alt="user"]{
+    position: relative;
+    top: 12px;
+}
+
+a#search-disabled:hover{
+    color: rgba(0,0,0,.44);
+}

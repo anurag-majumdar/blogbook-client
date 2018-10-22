@@ -1,0 +1,35 @@
+<navbar></navbar>
+
+<div class="container">
+  <div class="row">
+    <h3 class="center-align">Post to blogbook</h3>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <input id="title" [(ngModel)]="post.title" type="text">
+        <label for="title">Post Title</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <tag-input [(ngModel)]="post.tags" [modelAsStrings]="true" theme="minimal" [maxItems]="20"></tag-input>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <textarea id="description" class="materialize-textarea" [(ngModel)]="post.bodyDescription"></textarea>
+        <label for="description">Description</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container center-align">
+      <a class="waves-effect waves-light btn" (click)="createPost()">Post to blogbook</a>
+    </div>
+  </div>
+</div>

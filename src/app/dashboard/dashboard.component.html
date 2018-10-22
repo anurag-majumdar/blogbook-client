@@ -1,0 +1,61 @@
+<navbar></navbar>
+<div class="row">
+    <div class="card hero-card">
+        <div class="container">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12 center hide-on-med-and-up">
+                        <img [src]="userDetails?.profileImage" class="circle" width="100" height="100" alt="{{userDetails?.name}}">
+                    </div>
+                    <div class="col l7 m8 hide-on-small-only">
+                        <h4 class="hero-title">{{userDetails?.name}}</h4>
+                        <p class="hero-summary left">{{userDetails?.summary}}</p>
+                    </div>
+                    <div class="col s12 center hide-on-med-and-up">
+                        <h4 class="hero-title">{{userDetails?.name}}</h4>
+                        <p class="hero-summary">{{userDetails?.summary}}</p>
+                    </div>
+                    <div class="col l5 m2 avatar center hide-on-small-only">
+                        <img [src]="userDetails?.profileImage" class="circle" width="100" height="100" alt="{{userDetails?.name}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="card blue-grey darken-3 white-text" *ngFor="let post of posts">
+      <div class="row">
+        <div class="card-title">
+          <div class="row valign-wrapper">
+            <img [src]="post?.profileImage" alt="user" width="36" height="36" class="circle profile-image">
+            <div>
+              <p id="post-author">{{post?.author}}</p>
+              <p id="post-date">{{post?.date | date: 'MMMM dd, yyyy'}}</p>
+            </div>
+            <div class="col s1">
+              <a [routerLink]="['/update-post', post._id]" class="edit right btn-floating btn-medium">
+                <i class="medium material-icons">mode_edit</i>
+              </a>
+            </div>
+          </div>
+          <div class="post-title">
+            {{post.title}}
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <span> 
+          <span [innerHTML]="post.bodyDescription?.substring(0, 110)"></span><span *ngIf="post.bodyDescription?.length < 111">...</span>
+          <a *ngIf="post.bodyDescription?.length > 110" [routerLink]="['/post', post._id]">Read more...</a>
+        </span>
+      </div>
+      <div class="card-action">
+        <a [routerLink]="['/post', post._id]">View Post</a>
+        <a (click)="deletePost(post._id)" >Delete Post</a>
+      </div>
+    </div>
+  </div>
+</div>

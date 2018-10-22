@@ -1,0 +1,59 @@
+<div id="log-in-page">
+
+  <div class="row">
+		<h4 class="log-in-header center-align"><i class="material-icons">library_books</i>blogbook</h4>
+  </div>
+
+  <div class="card">
+
+    <div class="card-content">
+      <div class="row">
+        <form class="col l12 m12 s12">
+          <div class="row">
+            <div class="input-field col l12 m12 s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="username" name="username" type="text" class="validate" [(ngModel)]="loginUser.username">
+              <label for="username">Username</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col l12 m12 s12">
+              <i class="material-icons prefix">lock_outline</i>
+              <input id="password" name="password" type="password" class="validate" [(ngModel)]="loginUser.password">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row left-align">
+            <div class="col l12 m12 s12">
+              <a>Forgot Password?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+			<div id="log-in-button" class="row center-align">
+        <a class="waves-effect waves-light btn blue" (click)="login()">Log In</a>
+      </div>
+
+      <div id="divider" class="row">
+        <div class="divider"></div>
+      </div>
+
+      <div class="row center-align">
+        <p>Or connect with:</p>
+      </div>
+
+      <div class="oauth-log-in-buttons" class="row center-align">
+        <a (click)="facebookLogIn()" class="waves-effect waves-light btn dark-blue"><span class="fa fa-facebook space"></span>Facebook</a>
+        <a (click)="googleLogIn()" class="waves-effect waves-light btn red"><span class="fa fa-google space"></span>Google</a>
+      </div>
+
+			<div class="row">
+        <p class="center-align">New to blogbook? <a routerLink="/sign-up">Sign Up</a></p>
+      </div>
+
+    </div>
+
+  </div>
+  
+</div>

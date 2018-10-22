@@ -1,0 +1,65 @@
+<div id="sign-up-page">
+
+  <div class="row">
+		<h4 class="sign-up-header center-align"><i class="material-icons">library_books</i>blogbook</h4>
+  </div>
+
+  <div class="card">
+
+    <div class="card-content">
+      <div class="row">
+        <form class="col l12 m12 s12">
+          <div class="row">
+            <div class="input-field col l12 m12 s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="name" name="name" type="text" class="validate" [(ngModel)]="newUser.name">
+              <label for="name">First and Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col l12 m12 s12">
+              <i class="material-icons prefix">email</i>
+              <input id="email" name="email" type="email" class="validate" [(ngModel)]="newUser.email">
+              <label for="email" data-error="Please enter a valid mail id">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col l12 m12 s12">
+              <i class="material-icons prefix">lock_outline</i>
+              <input id="password" name="password" type="password" class="validate" [(ngModel)]="newUser.password">
+              <label for="password">Password (Atleast 8 characters)</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <p class="center-align col l12 m12 s12">By signing up, you agree to our Terms of Service and Privacy Policy.</p>
+      </div>
+
+      <div id="sign-up-button" class="row center-align">
+        <a class="waves-effect waves-light btn blue" (click)="register()">Create An Account</a>
+      </div>
+
+      <div id="divider" class="row">
+        <div class="divider"></div>
+      </div>
+
+      <div class="row center-align">
+        <p>Or connect with:</p>
+      </div>
+
+      <div class="oauth-log-in-buttons" class="row center-align">
+        <a (click)="facebookLogIn()" class="waves-effect waves-light btn dark-blue"><i class="fa fa-facebook space"></i>Facebook</a>
+        <a (click)="googleLogIn()" class="waves-effect waves-light btn red"><i class="fa fa-google space"></i>Google</a>
+      </div>
+
+      <div class="row">
+        <p class="center-align">Already on blogbook? <a routerLink="/login">Sign In</a></p>
+      </div>
+
+    </div>
+
+  </div>
+  
+</div>

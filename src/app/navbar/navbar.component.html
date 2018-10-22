@@ -1,0 +1,80 @@
+<mz-dropdown  [id]="'post-dropdown'"
+              *ngIf="!isLoggedOut"
+              [align]="'left'"
+              [belowOrigin]="true"
+              [constrainWidth]="false"
+              [dropdownButtonId]="'dd-post'"
+              [gutter]="true"
+              [hover]="true"
+              [inDuration]="300"
+              [outDuration]="300"
+              [stopPropagation]="true">
+  <mz-dropdown-item><a routerLink="/post">Create</a></mz-dropdown-item>
+  <mz-dropdown-item><a routerLink="/posts">View All</a></mz-dropdown-item>
+  <mz-dropdown-item><a routerLink="/my-posts">My Posts</a></mz-dropdown-item>
+</mz-dropdown>
+
+<mz-dropdown  [id]="'user-dropdown'"
+              *ngIf="!isLoggedOut"
+              [align]="'left'"
+              [belowOrigin]="true"
+              [constrainWidth]="false"
+              [dropdownButtonId]="'dd-user'"
+              [gutter]="true"
+              [hover]="true"
+              [inDuration]="300"
+              [outDuration]="300"
+              [stopPropagation]="true">
+  <mz-dropdown-item><a routerLink="/edit-user">Edit Profile</a></mz-dropdown-item>
+  <mz-dropdown-item><a routerLink="/dashboard" *ngIf="!isLoggedOut">Profile</a></mz-dropdown-item>
+  <mz-dropdown-item><a (click)="logout()" *ngIf="!isLoggedOut">Log Out</a></mz-dropdown-item>
+</mz-dropdown>
+
+<mz-navbar>
+    <div class="nav-wrapper">
+      <div class="container">
+        <a *ngIf="isLoggedOut" routerLink="/home" class="brand-logo"><i class="material-icons">library_books</i>blogbook</a>
+        <a *ngIf="!isLoggedOut" routerLink="/dashboard" class="brand-logo hide-on-small-and-down">blogbook</a>
+        <ul class="left">
+          <li><a data-activates="sidenav" class="button-collapse"><i mz-button [id]="'btn-sidenav'" class="material-icons">menu</i></a></li>
+        </ul>
+        <ul class="right">
+          <li class="hide-on-med-and-down"><a routerLink="/sign-up" *ngIf="isLoggedOut">Sign Up</a></li>
+          <li class="hide-on-med-and-down"><a routerLink="/login" *ngIf="isLoggedOut">Login</a></li>
+          <li *ngIf="!isLoggedOut && !searchState"><a id="search-disabled" (click)="toggleSearchState()" ><i mz-icon [align]="'right'" [icon]="'search'"></i></a></li>
+          <li *ngIf="!isLoggedOut" [hidden]="!searchState">
+            <mz-input-container id="search-enabled">
+              <i mz-icon mz-input-prefix [icon]="'search'"></i>
+              <input mz-input #searchInput
+                (keyup.enter)="search()"
+                [(ngModel)]="query"
+                id="search-input"
+                (blur)="toggleSearchState()"
+                [label]="'search'"
+                placeholder="Search"
+                type="text">
+            </mz-input-container>
+          </li>
+          <li class="hide-on-med-and-down" *ngIf="!isLoggedOut"><a id="dd-post" >Posts<i mz-icon [align]="'right'" [icon]="'arrow_drop_down'"> </i></a></li>
+          <li class="hide-on-med-and-down" *ngIf="!isLoggedOut"><a id="dd-user" ><img [src]="profileImage" alt="user" width="36" height="36" class="circle"></a></li>
+        </ul>
+      </div>
+    </div>
+</mz-navbar>
+
+<mz-sidenav
+  [id]="'sidenav'"
+  [collapseButtonId]="'btn-sidenav'">
+  <li *ngIf="isLoggedOut"><a routerLink="/home">blogbook</a></li>
+  <li *ngIf="!isLoggedOut"><a routerLink="/dashboard">blogbook</a></li>
+  <li *ngIf="!isLoggedOut"><a routerLink="/post"><i class="material-icons">create</i>Create Post</a></li>
+  <li *ngIf="!isLoggedOut"><a routerLink="/posts"><i class="material-icons">view_module</i>View All Posts</a></li>
+  <li *ngIf="!isLoggedOut"><a routerLink="/my-posts"><i class="material-icons">view_list</i>My Posts</a></li>
+  <li *ngIf="isLoggedOut"><a routerLink="/sign-up"><i class="material-icons">group_add</i>Sign Up</a></li>
+  <li *ngIf="isLoggedOut"><a routerLink="/login"><i class="material-icons">account_circle</i>Login</a></li>
+  <li *ngIf="!isLoggedOut"><div class="divider"></div></li>
+  <li *ngIf="!isLoggedOut"><a routerLink="/edit-user" ><i class="material-icons">mode_edit</i>Edit Profile</a></li>
+  <li *ngIf="!isLoggedOut"><a routerLink="/dashboard" ><i class="material-icons">dashboard</i>Profile</a></li>
+  <li *ngIf="!isLoggedOut"><a (click)="logout()" routerLink="/logout"><i class="material-icons">account_circle</i>Log Out</a></li>
+  <li><div class="divider"></div></li>
+</mz-sidenav>

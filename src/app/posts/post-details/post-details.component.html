@@ -1,0 +1,99 @@
+<div class="row">
+  <navbar></navbar>
+</div>
+
+<div class="container">
+  <div class="row valign-wrapper">
+      <img [src]="post?.profileImage" alt="user" width="60" height="60" class="circle">
+      <div>
+        <p *ngIf="post?.userId" id="post-author"><a class="inherit" [routerLink]="['/user-details', post.userId]">{{post?.author}}</a></p>
+        <p id="post-date">{{post?.date | date: 'MMMM dd, yyyy'}}</p>
+      </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="post">
+  <div class="container">
+    <div class="row left-align">
+      <h3>{{post.title}}</h3>
+    </div>
+    <div class="row">
+      <div id="body-description" [innerHTML]="post.bodyDescription"></div>
+    </div>
+    <div class="row">
+      <span *ngFor="let tag of post.tags" class="chip"><a class="inherit">{{tag}}</a></span>
+    </div>
+    <div class="row">
+      <a class="inherit" (click)="likeUnlikePost()"><i #likeIcon class="material-icons">thumb_up</i><span id="like-count" #likeCount>{{post?.likes.length}}</span></a>
+      <span id="comment"><i class="material-icons">comment</i> <span id="comment-count"> {{post?.comments.length}} </span></span>
+    </div>
+    <div class="row">
+      <div class="divider"></div>
+    </div>
+  </div>
+</div>
+
+<div id="post-comment" class="row">
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-title">
+          <i class="material-icons">comment</i><span id="comment-title">COMMENTS • {{post?.comments.length}}</span>
+        </div>
+        <div class="row">
+          <div class="input-field col s10">
+            <textarea id="comment-area" class="materialize-textarea" [(ngModel)]="commentBody"></textarea>
+            <label for="comment-area">Your Response</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <a class="waves-effect waves-light btn" (click)="postComment()" >Publish</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="post?.comments.length > 0">
+  <div class="container">
+    <div class="card" *ngFor="let comment of post?.comments; let i=index">
+      <div class="card-content">
+        <!--<div class="row">-->
+          <div class="col s12">
+            <div class="card-title activator ">
+              <div class="row valign-wrapper">
+                <img [src]="comment.profileImage" alt="user" width="36" height="36" class="circle">
+                <div>
+                  <p id="comment-author" class="blue-text"><a class="inherit" [routerLink]="['/user-details', post.userId]">{{comment?.author}}</a></p>
+                  <p id="comment-date">{{comment?.date | date: 'MMMM dd, yyyy'}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!--<div class="col s1">-->
+              <!--<ul id="{{'dropdown'+i}}" class='dropdown-content'>
+                <li><a class="inherit" (click)="comment.editMode=true">Edit</a></li>
+                <li><a class="inherit" (click)="deleteComment(comment._id)">Delete</a></li>
+              </ul>
+              <a class="dropdown-button inherit" [attr.data-activates]="'dropdown'+i"><i class="material-icons">more_vert</i></a>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+          <div class="input-field col s10" *ngIf="comment.editMode">
+            <textarea id="edit-comment-area" class="materialize-textarea" [(ngModel)]="comment.body" (keyup.enter)="updateComment(comment)" (keyup.esc)="comment.editMode=false" ></textarea>
+            <label for="edit-comment-area" class="active">Edit Your Response</label>
+          </div>
+          <div class="col s12" *ngIf="!comment.editMode">
+            <p id="comment-body">{{comment.body}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="comment?.userId == userDetails?._id" class="card-action">
+        <a class="inherit" (click)="comment.editMode=true">Edit</a>
+        <a class="inherit" (click)="deleteComment(comment._id)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

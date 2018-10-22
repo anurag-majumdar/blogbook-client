@@ -1,0 +1,48 @@
+.hero-title{
+    word-wrap: break-word;
+}
+
+.avatar{
+    display: block;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    line-height: normal;
+    position: relative;
+}
+
+.space{
+    height: 100%;
+}
+
+div.card.hero-card{
+    margin: 0px !important;
+}
+
+img.circle.profile-image{
+    position: relative;
+    left: 36px;
+}
+
+p#comment-author{
+    position: relative;
+    top: 8px;
+    left: 45px;
+    font-size: 14px;
+}
+
+p#comment-date{
+    position: relative;
+    top: -7px;
+    left: 45px;
+    font-size: 12px;
+}
+
+.post-title{
+    position: relative;
+    left: 28px;
+}
+
+div.card-content{
+    padding-left: 20px !important;
+}

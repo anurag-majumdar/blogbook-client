@@ -1,0 +1,61 @@
+<navbar></navbar>
+
+<div class="container">
+  <div class="row">
+    <h3 class="center-align">Edit Profile</h3>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="col s12 center">
+        <img [src]="userDetails.profileImage" class="circle" width="100" height="100" alt="{{userDetails.name}}">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <input id="name" [(ngModel)]="userDetails.name" type="text">
+        <label class="active" for="name">Name</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <input id="profileImage" [(ngModel)]="userDetails.profileImage" type="text">
+        <label class="active" for="profileImage">Profile Image URL</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <input id="summary" [(ngModel)]="userDetails.summary" type="text">
+        <label class="active" for="summary">Summary</label>
+      </div>
+    </div>
+  </div>
+  <!--<div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <input class="with-gap" [(ngModel)]="gender" name="group1" type="radio" id="gender"  />
+        <label for="gender">Gender</label>
+      </div>
+    </div>
+  </div>-->
+  
+  <div class="row">
+    <div class="container">
+      <div class="input-field col s12">
+        <input id="hobbies" [(ngModel)]="userDetails.hobbies" type="text">
+        <label class="active" for="hobbies">Hobbies</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container center-align">
+      <a class="waves-effect waves-light btn" (click)="saveUser()">Save</a>
+      <a class="waves-effect waves-light btn" routerLink="/dashboard" >Cancel</a>
+    </div>
+  </div>
+</div>

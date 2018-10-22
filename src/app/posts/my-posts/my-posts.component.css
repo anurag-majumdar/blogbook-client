@@ -1,0 +1,43 @@
+a{
+    cursor: pointer;
+}
+
+i{
+    size: 44px;
+}
+
+.edit{
+    right: 25px;
+}
+
+img.circle{
+    position: relative;
+    left: 36px;
+}
+
+p#comment-author{
+    position: relative;
+    top: 8px;
+    left: 45px;
+    font-size: 14px;
+}
+
+p#comment-date{
+    position: relative;
+    top: -7px;
+    left: 45px;
+    font-size: 12px;
+}
+
+.delete{
+    margin-right: 0px !important;
+}
+
+.post-title{
+    position: relative;
+    left: 28px;
+}
+
+div.card-content{
+    padding-left: 20px !important;
+}

@@ -1,0 +1,26 @@
+/*.header-text{
+    letter-spacing: 4px;
+    z-index: 99999;
+    color: white;
+}
+
+.para-text{
+    letter-spacing: 2px;
+    z-index: 99999;
+    color: white;
+}
+
+hr{
+    max-width: 150px;
+}*/
+
+footer{
+    background-color: #1b2126;
+    color: #6c7980;
+    height: 100px;
+}
+
+p.footer-text{
+    margin-top: 0px;
+    padding: 45px 0px 0px 0px;
+}

@@ -1,0 +1,23 @@
+.log-in-header{
+    margin-top: 30px;
+}
+
+.card{
+    width: 450px;
+    margin: 0px auto;
+}
+
+#log-in-page{
+    overflow: auto;
+    height: 100%;
+    background: url('../../assets/images/bg-auth.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.space{
+    position: relative;
+    left: -10px;
+}
